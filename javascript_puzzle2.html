@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>趣味心理测试</title>
+    <style type="text/css">
+
+      body{
+        padding-left: 1em;
+        font-family: "华文中宋",sans-serif;
+        font-weight:bold;
+        color: black;
+        background-image: url("背景图.png");
+
+      }
+      #animals{background-color:GhostWhite;}
+      h1{
+        color:#363036;
+      }
+      P{
+        font-size: 16px;
+        color:363036;
+      }
+      fieldset{
+        margin: 30px;
+      }
+    </style>
+    <script src="homework1.js"></script>
+  </head>
+  <body>
+  <h1 style="padding:20px;text-align:center">·情绪化动物趣味测试·<h1>
+  <fieldset>
+    <div id="animals">
+      <fieldset class="question">
+        <p id="1">Question 1: 你喜欢自己的外表吗？</p>
+          <p>是 —— 转Question 2</p>
+          <p>否 —— 转Question 5</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="2">Question 2: 你会每天都看报纸或书籍吗？</p>
+          <p>是 —— 转Question 6</p>
+          <p>否 —— 转Question 3</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="3">Question 3: 你会每天换一套衣服上班或上学吗？</p>
+          <p>是 —— 转Question 11</p>
+          <p>否 —— 转Question 7</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="4">Question 4: 如果身体有点不舒服你会非常在意吗？</p>
+          <p>是 —— 转Question 8</p>
+          <p>否 —— 转Question 9</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="5">Question 5: 你经常迟到吗？</p>
+          <p>是 —— 转Question 6</p>
+          <p>否 —— 转Question 4</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="6">Question 6: 在重要的日子的前一天你会难以入睡吗？</p>
+          <p>是 —— 转Question 4</p>
+          <p>否 —— 转Question 9</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="7">Question 7: 你会斥责别人在饭后还吃东西吗？</p>
+          <p>是 —— 转Question 10</p>
+          <p>否 —— 转Question 11</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="8">Question 8: 你喝牛奶之前会看看保质期吗？</p>
+          <p>是 —— 转Question 12</p>
+          <p>否 —— 转Question 13</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="9">Question 9: 你常常担心丝袜被钩破吗？</p>
+          <p>是 —— 转Question 8</p>
+          <p>否 —— 转Question 10</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="10">Question 10: 你是否有做记录或使用记事本的习惯？</p>
+          <p>是 —— 转Question 14</p>
+          <p>否 —— 转Question 13</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="11">Question 11: 乘车时你会看身边的人在看的报纸或杂志吗？</p>
+          <p>是 —— 转Question 15</p>
+          <p>否 —— 转Question 10</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="12">Question 12: 你每个月都省一些钱吗？</p>
+          <p>是 —— A</p>
+          <p>否 —— B</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="13">Question 13: 你认为未来将更加低迷吗？</p>
+          <p>是 —— 转Question 12</p>
+          <p>否 —— C</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="14">Question 14: 你会买二手的东西吗？</p>
+          <p>是 —— C</p>
+          <p>否 —— D</p>
+      </fieldset>
+      <fieldset class="question">
+        <p id="15">Question 15: 你是否没有耐心听完别人的演说？</p>
+          <p>是 —— D</p>
+          <p>否 —— 转Question 14</p>
+      </fieldset>
+    </div>
+      </fieldset>
+
+      <button onclick="answerOne()">A</button>
+      <button onclick="answerTwo()">B</button>
+      <button onclick="answerThree()">C</button>
+      <button onclick="answerFour()">D</button>
+        <script src="homework1.js"></script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua" crossorigin="anonymous"></script>
+  </body>
+</html>
