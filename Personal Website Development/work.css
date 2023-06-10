@@ -1,0 +1,101 @@
+/*--navbar--*/
+.container-fluid{
+background-color:#2b2c34;
+}
+.lbt-box {
+	position: relative;
+	width: 1260px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.imgs {
+	width: 100%;
+	height: 100%;
+	perspective: 1000px;
+}
+
+.imgitem {
+	position: absolute;
+	width: 400px;
+	height: 500px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 0;
+	transition: .8s;
+	opacity: 0;
+}
+
+.imgitem img {
+	width: 100%;
+	height: 100%;
+}
+
+.cur-img {
+	width: 800px;
+	z-index: 100;
+	opacity: 1;
+}
+
+.pre-img {
+	transform: translateX(-400px) rotateY(30deg) scale(0.8);
+	z-index: 9;
+	opacity: 0.9;
+}
+
+.next-img {
+	transform: translateX(400px) rotateY(-30deg) scale(0.8);
+	z-index: 9;
+	opacity: 0.9;
+}
+
+/* 幻灯片按钮 */
+.button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px; /* 适当设置高度 */
+  }
+
+  #pre, #next {
+	margin: 10px; /* 上下各预留10px的空间 */
+  }
+
+  .imgitem:hover .caption {
+	opacity: 1;
+  }
+
+  .caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+	color: white;
+	text-align: center;
+	padding: 20px;
+	opacity: 0;
+	transition: opacity 0.5s ease, background-image 0.5s ease;
+  }
+
+  .caption:hover {
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+	color: white;
+	opacity: 1;
+  }
+
+
+  .lbt-box {
+	position: relative;
+}
+
+.d-flex.justify-content-center.mt-1 {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
