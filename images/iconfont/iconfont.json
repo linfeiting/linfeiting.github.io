@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5288599",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "5387512",
+      "name": "按钮_关闭",
+      "font_class": "anniu_guanbi",
+      "unicode": "eaef",
+      "unicode_decimal": 60143
+    }
+  ]
+}
