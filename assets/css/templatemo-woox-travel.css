@@ -1,0 +1,516 @@
+/*
+
+TemplateMo 580 Woox Travel
+
+https://templatemo.com/tm-580-woox-travel
+
+*/
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+01. font & reset css
+02. reset
+03. global styles
+04. header
+05. banner
+06. features
+07. testimonials
+08. contact
+09. footer
+
+--------------------------------------------- */
+/*
+---------------------------------------------
+font & reset css
+---------------------------------------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+/*
+---------------------------------------------
+reset
+---------------------------------------------
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: #fbf3e1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: #22b3c1;
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #265451;
+  font-weight: 700;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 30px;
+  color: #265451;
+}
+
+
+
+
+#navbarNav{
+    padding-right: 2rem;
+}
+
+.navbar{
+    transition: 1s;
+}
+
+.nav{
+    color: #D9C9BA;
+    padding: 1px 1px;
+ }
+
+.navbar-brand{
+    color: #D9C9BA;
+    cursor: pointer;
+
+}
+
+/* navbar animation */
+.nav-item::after{
+    content:'';
+    display:block;
+    width:0px;
+    height:4px;
+    background:#D9C9BA;
+    transition: 0.2s;
+    margin-top:-10px;
+}
+
+.nav-item:hover::after{width:100%;}
+
+
+.nav-link{
+    padding:15px 5px;
+    transition:0.2s;}
+
+.navbar-nav .nav-link {
+    color:#D9C9BA;
+    font-size:18px;
+}
+
+.navbar-nav .active > .nav-link{
+
+    width:100%;
+    height:38px;
+
+  border-bottom: .25rem solid transparent;
+  border-bottom-color: #D9C9BA;
+  color: #e5e6e6;
+  font-weight: bold
+
+}
+
+.navbar{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  background: rgba(0, 0, 0, 0.6)!important;
+}
+
+.navbar-brand img{
+  height:3rem;
+}
+
+.navbar-nav li{
+  padding-right: 1rem;
+}
+
+
+.nav-link:hover {
+  color:#a39c83 !important;
+}
+
+.dropdown-item{
+  text-transform:none;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/*
+---------------------------------------------
+About Page Style
+---------------------------------------------
+*/
+
+.about-main-content {
+  margin-top: 74px;
+  background-image: url(../images/about-content-bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 130px 0px 200px 0px;
+}
+
+.blur-bg {
+	width: 100%;
+  height: 100%;
+  background: url(../images/about-content-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(8px) brightness(80%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.about-main-content .content {
+  border-radius: 23px;
+  text-align: center;
+  padding: 120px 60px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.about-main-content .content h2 {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  font-size: 50px;
+  margin-bottom: 25px;
+}
+
+.about-main-content .content .line-dec {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 2px;
+  background-color: rgba(250,250,250,0.3);
+  margin: 20px auto;
+}
+
+.about-main-content .content h4 {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.about-main-content .content p {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  padding: 0px 15%;
+}
+
+.about-main-content .content .main-button {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.about-main-content .content .main-button a {
+  background-color: #fff;
+  color: #22b3c1;
+  border-color: #fff;
+}
+
+.about-main-content .content .main-button a:hover {
+  opacity: 0.9;
+}
+
+.cities-town .slider-content {/////////////////////////////////////////////
+  min-height: 100%;
+  max-height: 100%;
+  position: relative;
+  margin-top: -70px;
+  background-color: #e4e2d3;
+  border-radius: 23px;
+  padding: 15px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
+
+.div.cities-town.container{
+  background-color: #c7b977;
+}
+
+.cities-town .slider-content h2 {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.cities-town .slider-content h2 em {
+  font-style: normal;
+  color: #255351;//出行前期准备文字颜色改这里/////////////////////////////////////////////////////////////////////////////////////////////
+}
+
+.cities-town .slider-content .item .thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cities-town .slider-content .item .thumb h4 {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.cities-town .owl-nav {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+
+.cities-town .owl-nav .owl-next span {
+  display: none;
+}
+
+.cities-town .owl-nav .owl-next::after {
+  font-family: "FontAwesome";
+  content: '\f061';
+  color: #cdcdcd;
+  font-size: 20px;
+  transition: all .3s;
+}
+
+.cities-town .owl-nav .owl-prev span {
+  display: none;
+}
+
+.cities-town .owl-nav .owl-prev::after {
+  font-family: "FontAwesome";
+  content: '\f060';
+  color: #cdcdcd;
+  margin-right: 15px;
+  font-size: 20px;
+  transition: all .3s;
+}
+
+.cities-town .owl-nav .owl-prev:hover::after,
+.cities-town .owl-nav .owl-next:hover::after {
+  color: #255351;//按钮颜色！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+}
+
+.weekly-offers {
+  padding-bottom: 0px;
+  margin-top: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.weekly-offers .container-fluid {
+  padding: 0px 30px;
+  height: 0px
+}
+
+.weekly-offers .section-heading {
+  height: 50px;
+}
+
+.weekly-offers .container{
+  height: 0px;
+}
+
+.weekly-offers .row {
+  height: 0px;
+}
+
+
+.weekly-offers .item {
+  margin: 0px 15px;
+  position: relative;
+  min-height: 600px;
+}
+
+.weekly-offers .item .thumb img {
+  padding-right: 0px;
+  border-radius: 10px;
+}
+
+.weekly-offers .item .thumb .text {
+  position: absolute;
+  background-color: #e4e2d3;
+  border-radius: 23px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+  padding: 30px;
+}
+
+.weekly-offers .item .thumb .text h4 {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.weekly-offers .item .thumb .text h6 {
+  display: inline-block;
+  float: right;
+  text-align: right;
+  font-size: 20px;
+  color: #22b3c1;
+}
+
+.weekly-offers .item .thumb .text h4 span,
+.weekly-offers .item .thumb .text h6 span {
+  font-size: 15px;
+  color: #afafaf;
+  font-weight: 400;
+}
+
+.weekly-offers .item .thumb .text ul {
+  border-top: 1px solid #eee;
+  margin-top: 25px;
+  padding-top: 25px;
+}
+
+.weekly-offers .item .thumb .text ul li {
+  color: #c7b977;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.weekly-offers .item .thumb .text ul li:first-child {
+  color: #2a2a2a;
+  font-weight: 600;
+}
+
+.weekly-offers .item .thumb .text .main-button {
+  margin-top: 30px;
+}
+
+.weekly-offers .item .thumb .text .main-button a:hover {
+  background-color: #c7b977;
+  border-color: #c7b977;
+  color: #fff;
+  opacity: 0.85;
+}
+
+.weekly-offers .owl-stage {
+  height:600px;
+}
+
+.weekly-offers .owl-stage-outer {
+  height:600px;
+}
+
+.weekly-offers .col-lg-6{
+  height:50px;
+}
+
+
+
+
+.weekly-offers .owl-nav {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.weekly-offers .owl-nav .owl-next span {
+  display: none;
+}
+
+.weekly-offers .owl-nav .owl-next::after {
+  font-family: "FontAwesome";
+  content: '\f061';
+  color: #255351;
+  font-size: 20px;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  border: 1px solid #255351;
+  display: inline-block;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: all .3s;
+  margin-left: 5px;
+}
+
+.weekly-offers .owl-nav .owl-prev span {
+  display: none;
+}
+
+.weekly-offers .owl-nav .owl-prev::after {
+  font-family: "FontAwesome";
+  content: '\f060';
+  color: #255351;//按钮颜色在这里！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+  font-size: 20px;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  border: 1px solid #255351;
+  display: inline-block;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: all .3s;
+  margin-right: 5px;
+}
+
+.weekly-offers .owl-nav .owl-prev:hover::after,
+.weekly-offers .owl-nav .owl-next:hover::after {
+  color: #fff;
+  background-color: #fbf3e1;
+}
+
+/*

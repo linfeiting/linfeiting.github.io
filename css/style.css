@@ -1,0 +1,219 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-style: normal;
+  font-family: Microsoft YaHei;
+}
+
+body, #map {
+  width: 100vw;
+  height: 100vh;
+}
+
+#app {
+  position: relative;
+}
+#app header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #e4e2d3;
+  z-index: 99;
+  padding: 20px;
+}
+#app header > a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: black;
+}
+#app header > a img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#app header nav {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+#app header nav a {
+  display: block;
+  height: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  color: black;
+}
+#app header nav .active {
+  border-bottom: 0.25rem solid transparent;
+  border-bottom-color: #D9C9BA;
+  color: black;
+  font-weight: bold;
+}
+#app .list {
+  width: 345px;
+  height: 700px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+  background: #fbf3e1;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  z-index: 99;
+  padding: 10px;
+  overflow-y: scroll;
+}
+#app .list .tis {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 19px;
+  color: #265451;
+  background-color: #c7b978;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: content-box;
+}
+#app .list .search {
+  display: flex;
+  align-items: center;
+}
+#app .list .search input {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+#app .list .search button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #FFF;
+  border: 1px solid #DCDFE6;
+  color: #606266;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  margin-left: 10px;
+  transition: 0.1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+#app .list .content {
+  margin-top: 10px;
+}
+#app .list .content .active p span {
+  transform: rotate(360deg) !important;
+}
+#app .list .content dt {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+#app .list .content dt p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  font-size: 16px;
+  color: #000;
+}
+#app .list .content dt p .iconfont {
+  color: #C0C4CC;
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+#app .list .content dt dl {
+  display: none;
+  padding-left: 30px;
+}
+#app .detail {
+  display: none;
+  width: 400px;
+  height: 700px;
+  background: #fbf3e1;
+  position: absolute;
+  right: 0;
+  top: 90px;
+  bottom: 0;
+  z-index: 99;
+  padding: 10px;
+}
+#app .detail .title {
+  color: #265451;
+  background-color: #c7b978;
+  padding: 5px 0;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+#app .detail .title .iconfont {
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  cursor: pointer;
+}
+#app .detail div .ts {
+  height: 30px;
+  width: 115px;
+  background: url("../images/title_bg.png") no-repeat left top;
+  line-height: 30px;
+  color: white;
+  font-size: 16px;
+  padding-left: 15px;
+  display: inline-block;
+  margin-top: 10px;
+}
+#app .detail div .text {
+  padding: 0 10px;
+  margin: 10px auto;
+  height: 300px;
+  overflow-y: scroll;
+  color: #333333;
+  line-height: 25px;
+}
+#app .detail div .banner {
+  margin-top: 10px;
+  width: 100%;
+  height: 180px;
+}
+#app .detail div .banner .mySwiper {
+  width: 100%;
+  height: 100%;
+}
+#app .detail div .banner .mySwiper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#app .detail div .banner .mySwiper .swiper-button-next, #app .detail div .banner .mySwiper .swiper-button-prev {
+  color: #fbf3e1;
+}
+#app .detail div .banner .mySwiper .swiper-button-next:after, #app .detail div .banner .mySwiper .swiper-button-prev:after {
+  font-size: 25px;
+}/*# sourceMappingURL=style.css.map */

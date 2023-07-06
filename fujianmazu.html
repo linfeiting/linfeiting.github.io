@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>妈祖神庙-首页</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./images/iconfont/iconfont.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=7LPfH01R57Hu7yv7C6RtaUB81GpI1h6X"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="shouye.css">
+    <link rel="stylesheet" href="mazudaohan.css">
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="bar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="首页.html">
+            <img src="mazu.png" alt="STUDIO GHIBLI">
+          福见妈祖
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse nav justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="active">
+                <a class="nav-link" aria-current="page" href="首页.html">首页</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  " aria-current="page" href="index.html">妈祖文化</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="video.html">影视作品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="fujianmazu.html">妈祖庙</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="旅游攻略.html">旅游攻略</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+    <section id="app">
+        <!-- <header>
+            <a href="首页.html">
+                <img src="./images/mazu.png" alt="妈祖">
+                <span>福见妈祖</span>
+            </a>
+            <nav>
+                <a href="首页.html" class="active">首页</a>
+                <a href="index.html">妈祖文化</a>
+                <a href="video.html">影视作品</a>
+                <a href="fujianmazu.html">妈祖庙</a>
+                <a href="旅游攻略.html">旅游攻略</a>
+            </nav>
+        </header> -->
+        <div class="list">
+            <div class="tis">
+                知名妈祖庙分布图
+            </div>
+            <!-- <div class="search">
+                <input type="text" placeholder="请搜索">
+                <button>搜索</button>
+            </div> -->
+            <dl class="content"></dl>
+        </div>
+        <div id="map"></div>
+        <div id="mapControls"></div>
+        <div class="detail">
+            <div class="title">
+                <p>山丹艾黎纪念馆</p>
+                <span class="iconfont icon-anniu_guanbi close"></span>
+            </div>
+            <div class="content">
+                <p class="ts">简介</p>
+                <p class="text description">
+                    山丹艾黎纪念馆，位于甘肃省张掖市山丹县文化街上，是为纪念国际友人路易·艾黎（Rewi
+                    Alley）而修建，现为甘肃省爱国主义教育基地。1927年4月21日，路易·艾黎从新西兰来到中国，在华生活和工作了60年，将毕生献给了中华民族独立解放和国家建设事业。1987年12月逝世于北京，邓小平为他题词：伟大的国际主义战士永垂不朽。2009年，路易·艾黎被评为中国缘·十大国际友人。艾黎情系山丹，把山丹视为他的“第二故乡”。山丹艾黎纪念馆成立于2012年8月，位于张掖市山丹县新城区，占地面积7384平方米，建筑面积4228.96平方米，共有藏品及实物资料1352件（套）。陈列展览共分十个单元，分别是青春年代、上海岁月、工合运动、培黎学校、热爱中国、情系山丹、幸福晚年、友谊使者、崇高荣誉、精神永存。建馆以来，为发扬路易·艾黎大爱无疆的国际主义精神、无私奉献的人道主义精神、自强不息的艰苦奋斗精神、坚韧不拔的创新创业精神，做出了积极贡献。
+                </p>
+            </div>
+            <div class="pic">
+                <p class="ts">照片</p>
+                <div class="banner">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Slide 1</div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            const dataList = [
+                {
+                    "districtname": "福建省",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "湄洲妈祖祖庙",
+                            "lon": "110",
+                            "lat": "27",
+                            "startlevel": 13,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "妈祖庙，即“湄洲妈祖祖庙”，位于福建省莆田市湄洲岛，始建于北宋雍熙四年（987年），是妈祖文化的起源地。湄洲妈祖祖庙是世界上第一座妈祖庙，现存建筑多为清代结构，妈祖庙建筑群以前殿为中轴线布局，依山势而建，形成了纵深300米、高差40余米的主庙道，从山门、仪门到正殿由323级台阶连缀两旁的各组建筑。在祖庙山顶，还建有14米高的巨型妈祖石雕像。2006年5月25日，妈祖庙被中华人民共和国国务院公布为第六批全国重点文物保护单位。",
+                            "imageUrls": [
+                                "https://p2.itc.cn/q_70/images03/20221209/c78deb61b97346f5be2046a1ecedf1b9.png"
+                            ],
+                            "panoramaUrl": "https://720yun.com/t/9f3jOdtvrk4"
+                        },
+                        {
+                            "name": "龙岩西陂天后宫",
+                            "lon": "110",
+                            "lat": "27.2",
+                            "startlevel": 13,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "西陂天后宫，位于福建省龙岩市永定区高陂镇西陂村，西陂天后宫，造型奇特，是全国少见的独树一帜的塔式建筑物，俗称“文塔”，始建于明嘉靖二十一年（1542年），建成于清顺治十七年（1660年）；占地面积6400平方米，建筑面积1600平方米。西陂天后宫的布局院落方正，坐南朝北，包含有天后宫塔，登云馆；宫塔主体建筑为7层塔式结构，通高40余米，为楼阁式的，一、二、三层为四方形，土木结构；四层以上为八角形，四、五层是砖木结构；六、七层用大圆杉木为轴心，数十根方木条向八方辐射成年轮状，纯木构筑，塔顶葫芦用瓷都景德镇特制的圆缸垒成，分红、黄、蓝、白、青诸色，用8毫米粗铁索拴牢，西陂天后宫具有较高的历史价值、艺术价值和科学价值。2006年5月25日，西陂天后宫被中华人民共和国国务院公布为第六批全国重点文物保护单位。",
+                            "imageUrls": [
+                                "https://p4.itc.cn/q_70/images03/20221209/21d42e5230d34036aab0620cc7652dd3.png"
+                            ],
+                            "panoramaUrl": "https://720yun.com/t/42c27uauj4a"
+                        },
+                        {
+                            "name": "泉州天后宫",
+                            "lon": "110.4",
+                            "lat": "27.3",
+                            "startlevel": 6,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "    泉州天后宫，位于福建省泉州市鲤城区南门天后路，始建于南宋庆元二年（1196年），是海内外妈祖庙宇中年代最早、规格最高的古建筑。初建时以宋徽宗赐额“顺济”为庙名。明永乐十三年（1415年），少监张谦出使渤泥，从泉州浯江启航，回国后奏请朝廷鼎力重修，并把“顺济庙”改为“天妃宫”。清康熙十九年（1680年），施琅准备征台，奏报“神涌潮济师”、“有助顺功”，清朝廷敕封“护国庇民妙灵昭应宏仁普济天后”，“天妃宫”又改名为“天后宫”。天后宫建筑群保存有宋代构件和明清时期木构建筑。主体建筑分布于南北中轴线上，有山门、戏台、东西阙、正殿、东西廊、寝殿、东西轩、四凉亭、两斋馆和梳妆楼等。作为妈祖信仰文化物质载体的泉州天后宫，对促进海峡两岸文化交流具有重要作用。1988年1月13日，泉州天后宫被中华人民共和国国务院公布为第三批全国重点文物保护单位。",
+                            "imageUrls": [
+                                "https://p1.itc.cn/q_70/images03/20221209/45170ad5cea24961a3529e721f0c1d97.png"
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "districtname": "港澳台地区",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "澳门凼仔天后宫",
+                            "lon": "107",
+                            "lat": "24",
+                            "startlevel": 1,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "澳门天后宫，2003年10月4日刚刚落成，历时2年半，耗资2亿澳门元。它坐落在澳门路环岛的靈石塘山上，占地近7000平方米，是澳门迄今规模最大的庙宇。整个建筑按照闽南古建筑风格设计建造，井参照福建、台湾等地妈祖庙的传统规制布局，宫前有长达60余米的阶梯，厚实华丽的牌坊式山门、汉白玉围起的祭坛和由回廊连为一体的大股、梳妆楼、钟楼和鼓楼等。主殿坐西朝东，气势恢弘，楼台宇顶雕龙飞機，金色琉璃熠熠生辉。宫内雕梁画栋，金碧辉煌。高达3米的妈祖塑像凤冠霞帔，慈眉善目，仪态端庄。作为世界上惟一以妈祖命名的城市，澳门早在1488年就在内港建起了第一个妈祖庙一一妈祖阁（又称妈阁庙），井从此香火旺盛，经年不断。上个世纪末，澳门己经在登石塘山上建造了一座商19.99米、重500多吨的妈祖汉白玉塑像。据说，这是目前全世界最高的妈祖娘娘塑像。",
+                            "imageUrls": [
+                                "https://p8.itc.cn/q_70/images03/20221209/e7ede8b873884b999714cae47235a094.png"
+                            ]
+                        },
+                        {
+                            "name": "广州南沙天后宫",
+                            "lon": 109,
+                            "lat": "25",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "天后宫，位于广州市南沙区，前身是明代南沙鹿颈村天妃庙，经重修定名为“元君古庙”，后在抗日战争时被日军炸毁。现存天后宫为1994年，国家政协副主席，著名实业家霍英东先生倡议并捐资重建南沙天后宫。天后宫紧临珠江出海口伶仃洋，坐落于大角山东南麓，在天后广场正中就是石雕天后圣像（高达 14.5 米），是为纪念海上女神林默而建，建筑特点是集北京故宫的风格和南京中山陵的气势于一体，其规模是现今世界同类建筑之最，被誉为“天下天后第一宫”，也是东南亚最大的妈祖庙。",
+                            "imageUrls": [
+                                "https://p3.itc.cn/q_70/images03/20221209/525c8c5ca721416783b441326f708e86.png"
+                            ]
+                        },
+                        {
+                            "name": "赤湾天后宫",
+                            "lon": 107.2,
+                            "lat": "24.7",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "赤湾天后宫，也叫天后博物馆，坐落在广东省深圳市南山区赤湾村旁小南山下，倚山傍海，风光秀丽。其创建远溯宋代，其营造气势宏伟，明、清两朝多次修葺，规模日隆，明永乐初年，三宝太监郑和奉明成祖朱棣之命，率领舟师远下西洋，开创海上“丝绸之路”，赤湾天后宫为其重要一站。 以天后宫为中心的“赤湾胜概”是明清时期“新安八景”中的第一景。",
+                            "imageUrls": [
+                                "https://p8.itc.cn/q_70/images03/20221209/05fa14929d61456c925ff81de6d0c612.png"
+                            ]
+                        },
+                        {
+                            "name": "佛堂门天后古庙",
+                            "lon": 107.3,
+                            "lat": "25",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "佛堂门天后古庙位于新界西贡区清水湾半岛以南的大庙湾，邻近佛堂门及布袋澳村，是香港天后庙中最古老、规模最大的一间，故称大庙，也是广东沿岸现存最古老的天后庙，获古物咨询委员会评定为一级历史建筑物（具特别重要价值而必须尽可能予以保存的建筑物），由华人庙宇委员会负责管理。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/c2fdfc039245d688712daeaaa4c27d1ed21b2494?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_auto"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "districtname": "台湾",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "台南大天后宫",
+                            "lon": "114",
+                            "lat": "24.8",
+                            "startlevel": 8,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "大天后宫俗称台南妈祖庙，建于清康熙23年（公元1684年），原为明宁靖王府邸，是郑成功之子郑经为了表示对宁靖王朱由桂礼遇而建。后来清将施琅率军攻占台湾，将平定之功劳归于妈祖，于是在宁靖王府内供奉妈祖且改名为天后宫，扩建为巍峨宏大的妈祖庙。大天后宫历经了数次整修，在1985年以其历史与文化地位被列为第一级古迹。大天后宫在台湾将近400座妈祖庙中，具有贵族般的尊贵地位，是台湾第一座官建妈祖庙，也是唯一列入官方春秋祭典的妈祖庙。庙中塑像、雕塑皆出自名匠之手。古匾、古联之珍贵丰富更是全台庙宇少见。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/b7003af33a87e950ad58793417385343fbf2b41f?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyMjA=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                        {
+                            "name": "大甲镇澜宫",
+                            "lon": "114.5",
+                            "lat": "25",
+                            "startlevel": 12,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "镇澜宫位于台湾省台中市大甲区，为大甲镇赫赫有名的老庙宇，位于顺天路和蒋公路交叉口旁，是大甲地方的信仰中心。镇澜宫建庙已有200多年历史，因信徒众多、香火旺盛，庙体一再整修重建，呈现出今昔交错、华丽与古朴杂揉的瑰丽面貌，被认为是现代人花大钱盖大庙的典范。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/b58f8c5494eef01fd14b8a96e3fe9925bc317d02?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "districtname": "中国其他地区",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "贵州镇远天后宫",
+                            "lon": "100",
+                            "lat": "28",
+                            "startlevel": 5,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "镇远天后宫，又称福建会馆，位于贵州省黔东南苗族侗族自治州镇远县㵲阳镇新中街，始建于清代，占地面积2372平方米，建筑面积1200平方米。镇远天后宫坐北朝南，背山面水，门临大街，地势较高，门前直铺88级宽石台阶。其主要建筑有：山门、戏台、正殿、东西两厢房、耳房、后厢房等。建筑均为穿斗式木结构，屋面以青瓦覆盖。殿内供奉“海神”妈祖，是为纪念海神妈祖和作为福建同乡会馆而建。镇远天后宫做为祭祀海神妈祖和福建商人聚会之所，反映了清代镇远商贾云集，航运发达的盛况，同时也表明长江流域与东南沿海之间的文化交流，它对研究贵州与沿海地区的经济、文化交流具有重要价值。2019年10月16日，镇远天后宫被中华人民共和国国务院公布为第八批全国重点文物保护单位。",
+                            "imageUrls": [
+                                "https://p2.itc.cn/q_70/images03/20221209/4712570fa8d445eab21142ef733ec05a.png"
+                            ]
+                        },
+                        {
+                            "name": "湖南芷江天后宫",
+                            "lon": "105",
+                            "lat": "29",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "芷江天后宫在舞水西岸，与芷江侗族自治县县城隔河相望。清同治八年（1869年）《芷江县志》载：乾隆十三年（1748年）福建客民在福建会馆原址上重新修建天后宫，其规制就已经是今天的样子。从明代开始，就有一批远离家乡经商的福建客家人通江达海，从洞庭湖进入沅江，再入潕水，到达芷江。最早的妈祖庙在此时应运而生。到清朝时，福建商民于1684年在芷江河西建立福建会馆，福建客商此后大量聚集于此。芷江天后宫与县城隔江相望，占地面积约3700平方米，现存建筑面积1970平方米，整体呈坐西朝东走向。天后宫围绕中轴线两侧分布，为三进制院落，依次分别经过戏台、过殿、妈祖殿，北方的厢房依次为药王殿、财神殿、观音殿、玉皇殿、南岳圣帝殿，南边的厢房则为三清殿。",
+                            "imageUrls": [
+                                "https://p8.itc.cn/q_70/images03/20221209/f13d9dc8428e4d188a5176fb01f3537d.png"
+                            ]
+                        },
+                        {
+                            "name": "辽宁锦州天后宫",
+                            "lon": 115,
+                            "lat": 43,
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "辽宁锦州天后宫又称天后行宫，坐落于辽宁省锦州市古塔公园广济寺塔北侧，内供奉被称为“妈祖”的“天后”神祗，为现存北方最大的妈祖庙，也是中国最北方的妈祖庙。北方（黄河以北）最大的妈祖庙——锦州天后宫在2003年首次“妈祖祭祀大典”。这也是久违了半个世纪之后的妈祖祭祀大典。",
+                            "imageUrls": [
+                                "https://gansu.tianditu.gov.cn/img/凉州战役纪念馆/凉州战役纪念馆1.jpg",
+                                "https://gansu.tianditu.gov.cn/img/凉州战役纪念馆/凉州战役纪念馆2.jpg",
+                                "https://gansu.tianditu.gov.cn/img/凉州战役纪念馆/凉州战役纪念馆3.jpg"
+                            ]
+                        },
+                        {
+                            "name": "山东长岛显应宫",
+                            "lon": 112,
+                            "lat": 37.902962,
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "始建于北宋宣和四年（公元1122年）的长岛庙岛显应宫（妈祖庙），是中国北方修建最早、规模最大、影响最广的妈祖庙，也是世界重要的妈祖官庙之一，享“天妃北庭”“北海神乡”之誉。妈祖文化与信仰传承千年，有“南有湄洲，北有长岛”之说，长岛妈祖庙（显应宫）与福建湄州岛妈祖庙并称妈祖“南北祖庭”。显应宫亦称海神娘娘庙，位于长岛所辖庙岛东部，占地90多亩，因明崇祯皇帝御赐庙额“显应宫”而得名，清咸丰皇帝也曾御赐“神功济运”金匾。公元1125年，福建船民移送一尊妈祖铜像供奉于显应宫，这是存世的惟一一尊宋代铜身妈祖。在北方沿海，特别是在长岛，妈祖文化在人们心目中的影响是十分久远而深刻的。人们行船遇风或生病灾，均向妈祖祈祷许愿，脱危后到显应宫还愿。或刻碑，或送匾，送船模，送斗篷衣物，或捐钱财。由于庙岛群岛的海上特殊地理位置和便利的航海条件，被神化了的妈祖信仰以庙岛为根据地，南传蓬莱及胶东沿海，北经渤海海峡，进入东北和华北北部，再沿朝鲜半岛进入朝鲜和日本等东北亚国家，最终北上穿过白令海峡，到达北美洲地区。",
+                            "imageUrls": [
+                                "https://pic.lvmama.com/uploads/pc/place2/2016-06-27/16bb522d-d85d-4a02-861b-4051067d72a6.jpg"
+                            ]
+                        },
+                        {
+                            "name": "天津天后宫",
+                            "lon": 110,
+                            "lat": 41,
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "天后宫建于1326年（元泰定三年），原名天妃宫，俗称娘娘宫，历经多次重修，是天津市区最古老的建筑群，也是中国现存年代最早的妈祖庙之一，宗教建筑。建筑群坐西朝东，面向海河，由山门、牌坊、前殿、大殿等组成，属典型的中国传统庙宇式建筑。每年天后诞辰，以天后宫为中心举行大型民间酬神庙会活动，沿河船户、周边信众亦纷纷到来，各地商贾云集，造就了天津最著名的商业街——宫南宫北大街（今古文化街）的繁荣。天后宫位于天津古城东门外，始建于元代。由于当时海运漕粮，漕船海难不断发生，而天津是海运漕粮的终点，是转入内河装卸漕粮的码头，所以，元泰定三年（1326年），皇帝下令建天后宫（当时叫天妃宫）于天津海河三岔河口码头附近，供人们奉祀海神天后。水工、船夫、官员在出海或漕粮到达时，都向天后祈福求安。居家百姓没钱的也来求财，没儿的求子，有病的祈免病灾。这是古人无法克服海洋、江河险难而求助神灵的消极表现，也反映了苦难民众的古朴文化心态。 ",
+                            "imageUrls": [
+                                "https://p8.itc.cn/q_70/images03/20221209/f3549b3488d547459d5f1d02a4cfbca0.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "districtname": "日本",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "日本横滨中华街妈祖庙",
+                            "lon": "130",
+                            "lat": "37",
+                            "startlevel": 7,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "日本横滨中华街妈祖庙是海外传播妈祖文化最早的国家之一，迄今已有600多年历史，其最大妈祖庙位于横滨中华街。该庙香火鼎盛，人气兴旺，已成当地华侨华人乃至日本民众心灵寄托。中华街妈祖庙始建于2005年3月。当时横滨侨界组织斥资10亿日元，从日本一著名房地产公司购回相关地皮，专门用于兴建全日本最大妈祖庙，由日本华裔、横滨中华街建筑总设计师中山严先生担纲设计，不仅与中华街整体建筑和谐统一，而且参照海峡两岸妈祖庙规制，采用中国传统宗教建筑八角形风格。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/8718367adab44aed2e736735b9509001a18b86d64d87?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxMTY=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                        {
+                            "name": "日本兴福寺",
+                            "lon": "130",
+                            "lat": "37.902962",
+                            "startlevel": 9,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "兴福寺（别名南京寺）。日本元和九年(1623)，由中国各省来日商人和僧人代表筹划，以南京地区商人为主，在长崎东明山创建兴福寺，寺内开设庙堂（包括妈祖庙堂），开山主持是江西僧人真丹刘。1632年第二任主持僧人默子如定扩大寺院领地，修缮妈祖堂。1654年第三任主持僧人隐元隆琦，不仅扩大妈祖堂，还积极进行祭祀活动。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/8718367adab44aed9174c240b41c8701a18bfb58?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                        {
+                            "name": "日本福济寺",
+                            "lon": "132",
+                            "lat": "38.798285",
+                            "startlevel": 6,
+                            "endlevel": 18,
+                            "type": "CountryLevel",
+                            "description": "福济寺。日本宽永五年(1628)，由泉州、漳州的船主出资，在长崎岩原创建福济寺，开山主持是泉州人觉海。寺内同样设立妈祖祖堂，把船上的妈祖像供奉在妈祖堂内，并进行祭祀活动。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/0d338744ebf81a4c510fb7e012617759252dd42a08cc?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                        {
+                            "name": "日本崇福寺",
+                            "lon": "132.5",
+                            "lat": "38.94076",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "崇福寺（附圣福寺）。日本宽永六年(1629)，由福州船主出资，在长崎高野平乡的圣寿山上创建崇福寺，开山主持是僧人超然。在崇福寺内单独建立了妈祖（姐）堂，还在寺内建有妈祖门楼，门的正上方高悬“山河正气”四个金字大横匾。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/63d9f2d3572c11dff09b42dc642762d0f603c283?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UyNzI=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "districtname": "东南亚",
+                    "type": "scenicspot",
+                    "scenicspots": [
+                        {
+                            "name": "新加坡天福宫",
+                            "lon": "95",
+                            "lat": "5",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "天福宫（Thian Hock Keng）坐落于新加坡市区的直落亚逸街，早期华人称这里为源顺街。天福宫始建于1840年，历时3年才建成，已有170多年的历史。天福宫供奉的是护航之神“天后娘娘”（即妈祖、天妃），因是福建帮人士建造经营的，所以也叫“妈祖宫”。在新加坡开埠时期，南来北归的华人，因所乘帆船就停泊在宫前不远处，所以都会到宫内拜祀，南来者感谢妈祖保佑，北归者祈求海不扬波。 天福宫在1973年被列为新加坡国家古迹，规模最大的一次修复工程是在1998年，当时耗资400多万新元来完成这历时3年的庞大修复工程。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/c83d70cf3bc79f3dd0bc488bbaa1cd11728b292f?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        },
+                        {
+                            "name": "马来西亚青云亭",
+                            "lon": "95",
+                            "lat": "8",
+                            "startlevel": 14,
+                            "endlevel": 20,
+                            "type": "ProvincialLevel",
+                            "description": "作为马来西亚最古老的一间华人寺庙，青云亭为首任华人甲必丹郑启基（又名郑芳扬）于1673年创建，取平步青云之意。青云亭原名观音亭，规模宏大，整座建筑全部用楠木建成，山门上书“南海飞来”四字。殿内以生漆涂饰，黑红闪亮，屋檐上有由碎玻璃及瓷造成的神话及动物雕像，在阳光下闪闪发亮华丽夺目。庙内上漆的木雕更加引人入胜。庙里的主神明有观世音菩萨，左坛是航海者的保佑神天后娘娘。坛上的栏杆描绘了佛祖的生平。庭院里可看到佛教、儒家和道家的教义。这座庙宇的建筑材料都是来自中国。300多年来，该亭经历了6次重修和3次扩建。亭内的各种碑文、匾额、楹联和华人祖先牌位等，是研究马来西亚华人社会的重要历史资料。仍有不少僧侣居住其中，是马来西亚最古老的一间华人寺庙。",
+                            "imageUrls": [
+                                "https://bkimg.cdn.bcebos.com/pic/80cb39dbb6fd526609b1f3f5a218972bd50736bd?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U5Mg==,g_7,xp_5,yp_5/format,f_auto"
+                            ]
+                        }
+                    ]
+                },
+            ];
+            // 创建地图实例
+            var map = new BMapGL.Map("map");
+            // 初始化地图，设置中心点和缩放级别
+            map.centerAndZoom(new BMapGL.Point(110, 27), 5);
+            map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+    map.addControl(scaleCtrl);
+    var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+    map.addControl(zoomCtrl);
+            // 自定义覆盖物
+            function CustomOverlay(point, labelContent, data) {
+                this._point = point;
+                this._labelContent = labelContent;
+                this._data = data;
+            }
+            CustomOverlay.prototype = new BMapGL.Overlay();
+            CustomOverlay.prototype.initialize = function (map) {
+                this._map = map;
+                var div = this._div = document.createElement("div");
+                div.style.position = "absolute";
+                div.style.zIndex = BMapGL.Overlay.getZIndex(this._point.lat);
+                div.style.color = "#000";
+                div.style.fontWeight = "600";
+                div.style.padding = "5px";
+                div.style.width = "200px";
+                div.style.align = "center";
+                var this_ = this;
+                div.addEventListener('click', function () {
+                    $('.detail').css('display', 'block')
+                    $('.detail .title p').text(this_._data.name)
+                    $('.detail .description').text(this_._data.description)
+                    $('.swiper-wrapper').empty()
+                    this_._data.imageUrls.forEach(item => {
+                        swiper.appendSlide(` <div class="swiper-slide"><img src='${item}'/></div>`)
+                    })
+                })
+                let dom = `
+                    <p style='text-align:center'> <img src='./images/图标.png' width='20px'/> </p>
+                    <p style='text-align:center'>${this._labelContent}</p>
+                `
+                map.getPanes().labelPane.appendChild(div);
+                div.innerHTML = dom;
+                return div;
+            };
+            CustomOverlay.prototype.draw = function () {
+                var map = this._map;
+                var pixel = map.pointToOverlayPixel(this._point);
+                this._div.style.left = pixel.x - parseInt(this._div.style.padding) + "px";
+                this._div.style.top = pixel.y - parseInt(this._div.style.padding) + "px";
+            };
+            // 遍历数据
+            dataList.forEach((item, index) => {
+                let dtDom = $(`<dt><p class='show'><span class="iconfont icon-xiala"></span>${item.districtname}</p></dt>`)
+                let dlDom = '';
+                (item.scenicspots).forEach((it, ind) => {
+                    dlDom += `
+                    <dl data-parent='${index}' data-child='${ind}'>
+                        <dt>${it.name}</dt>
+                    </dl>
+                    `
+                    var point = new BMapGL.Point(it.lon, it.lat);
+                    var customOverlay = new CustomOverlay(point, it.name, it);
+                    map.addOverlay(customOverlay);
+                })
+                dtDom.append(dlDom)
+                dtDom.on('click', '.show', function (e) {
+                    e.stopPropagation()
+                    $(this).parent().find('dl').slideToggle()
+                    $(this).parent().toggleClass('active')
+                })
+                dtDom.on('click', 'dl', function (e) {
+                    let parentInex = $(this).attr('data-parent') * 1;
+                    let childInex = $(this).attr('data-child') * 1;
+                    let data = dataList[parentInex].scenicspots[childInex];
+                    // // 创建标注物
+                    map.clearOverlays();
+                    var point = new BMapGL.Point(data.lon, data.lat);
+                    var customOverlay = new CustomOverlay(point, data.name, data);
+                    map.addOverlay(customOverlay);
+                    map.panTo(point);
+                })
+                $('.list .content').append(dtDom)
+            })
+            $('.close').on('click', function (e) {
+                $('.detail').css('display', 'none')
+            })
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>
