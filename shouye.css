@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
+html body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body{
+  overflow-x: hidden;
+
+  color: #595447;
+}
+/*导航样式*/
+#navbarNav{
+    padding-right: 2rem;
+}
+
+.navbar{
+    transition: 1s;
+}
+
+.nav{
+    color: #D9C9BA;
+    padding: 1px 2px;
+ }
+
+.navbar-brand{
+    color: #D9C9BA;
+    cursor: pointer;
+
+}
+
+.navbar{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  background: rgba(0, 0, 0, 0.6)!important;
+}
+
+.navbar-brand img{
+  height:3rem;
+}
+
+.navbar-nav li{
+  padding-right: 1rem;
+}
+
+
+.nav-link:hover {
+  color:#a39c83 !important;
+}
+
+.dropdown-item{
+  text-transform:none;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 767px) {
+    /* 在较小的屏幕尺寸下进行调整 */
+    .mazu {
+        width: 100%; /* 修改宽度为相对宽度 */
+        height: 100%;
+        left: 15%; /* 修改左边距为相对值 */
+    }
+
+    .cloud-image {
+        max-width: 80px; /* 缩小云朵图像宽度 */
+        max-height: 80px;
+    }
+}
+@media (min-width: 768px) {
+    /* 在较小的屏幕尺寸下进行调整 */
+    .mazu {
+        width: 70%; /* 修改宽度为相对宽度 */
+        height: 70%;
+        left: 15%; /* 修改左边距为相对值 */
+    }
+
+    .cloud-image {
+        max-width: 150px; /* 缩小云朵图像宽度 */
+        max-height: 150px;
+    }
+}
+@media (min-width: 992px) {
+    /* 在较小的屏幕尺寸下进行调整 */
+    .mazu {
+        width: 970px; /* 修改宽度为相对宽度 */
+        left: 25%; /* 修改左边距为相对值 */
+    }
+
+    .cloud-image {
+        max-width: 250px; /* 缩小云朵图像宽度 */
+        max-height: 250px;
+    }
+}
+@media (min-width: 1200px) {
+    /* 在较小的屏幕尺寸下进行调整 */
+    .mazu {
+        width: 100%; /* 修改宽度为相对宽度 */
+        left: 30%; /* 修改左边距为相对值 */
+    }
+
+    .cloud-image {
+        max-width: 350px; /* 缩小云朵图像宽度 */
+        max-height: 350px;
+    }
+}
+.mazuz {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 40%;
+    /* height: 100%; */
+    /* background-image: url(image/mazu.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.cloud-image {
+    z-index: 1;
+    position: relative;
+    float: left;
+    width: 350px;
+    height: 350px;
+    animation: moveRight 10s linear infinite;
+}
+.cloudd{
+    position: absolute;
+    left: -100%;
+}
+.cloud1 {
+    position: absolute;
+    left: -50%;
+}
+.cloud1 {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+.cloudd1{
+    position: absolute;
+    top: 30%;
+    left: -80%;
+}
+.cloud2 {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+}
+.cloudd2 {
+    position: absolute;
+    left: -30%;
+    top: 50%;
+}
+.cloud3 {
+    position: absolute;
+    left: 60%;
+    top: 10%;
+}
+.cloudd3 {
+    position: absolute;
+    left: -40%;
+    top: 10%;
+}
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+        /* 初始位置为向左超出页面外 */
+    }
+
+    100% {
+        transform: translateX(320%);
+        /* 最终位置为向右超出页面外 */
+    }
+}
+body{
+    background-color: #fbf3e1;
+}
